@@ -17,4 +17,10 @@ public class GrapheListe implements Graphe {
     public List<String> suivant(String n) {
         return null;
     }
+
+
+    public String toString() {
+        StringBuffer st = new StringBuffer();
+        for (int i = 0;i<)
+    }
 }

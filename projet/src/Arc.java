@@ -7,6 +7,17 @@ public class Arc {
     private double cout;
 
 
+    /**getters
+     *
+     */
+    public String getDest() {
+        return dest;
+    }
+
+    public double getCout() {
+        return cout;
+    }
+
     /**
      * Constructeur qui récupere le noeud et son cout
      **/
@@ -18,5 +29,6 @@ public class Arc {
         }
         else throw new Exception("cout négatif");
     }
+
 }
 
