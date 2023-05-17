@@ -36,6 +36,4 @@ public class Noeud {
         Arc a = new Arc(destination,cout);
         arcs.add(a);
     }
-
-
 }
