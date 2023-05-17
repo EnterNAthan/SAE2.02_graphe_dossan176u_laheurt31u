@@ -1,5 +1,7 @@
+import java.util.List;
+
 public interface Graphe {
     public List<String> listeNoeud();
 
-    pub
+    public List<String> suivant(String n);
 }
