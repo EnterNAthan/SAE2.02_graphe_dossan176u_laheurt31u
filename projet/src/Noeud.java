@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class Noeud {
 
     /**
@@ -19,17 +22,20 @@ public class Noeud {
      * @param o : Object, donner un type Noeud pour verifier l'egalite
      * @return true si les deux objets sont des Noeuds avec un nom identique, false sinon
      */
-    public boolean Equals(Object o) {
+    public boolean equals(Object o) {
         boolean res;
         if (o instanceof Noeud) {
             Noeud n = (Noeud) (o);
-            if (n.nom.Equals(this.nom)) res = true;
+            if (n.nom.equals(this.nom)) res = true;
             else res = false;
         } else res = false;
         return res;
     }
 
-    public void ajouterArc(String destination, double cout)
+    public void ajouterArc(String destination, double cout) throws Exception{
+        Arc a = new Arc(destination,cout);
+        arcs.add(a);
+    }
 
 
 }
