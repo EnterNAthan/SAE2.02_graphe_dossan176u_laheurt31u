@@ -36,4 +36,8 @@ public class Noeud {
         Arc a = new Arc(destination,cout);
         arcs.add(a);
     }
+
+    public String getNom() {
+        return nom;
+    }
 }
