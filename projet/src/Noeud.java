@@ -4,6 +4,19 @@ import java.util.List;
 public class Noeud {
 
     /**
+     * getter
+     *
+     * @return arcs
+     */
+    public List<Arc> getArcs() {
+        return arcs;
+    }
+
+    public String getNom() {
+        return nom;
+    }
+
+    /**
      * attributs
      */
     private String nom;
@@ -19,6 +32,7 @@ public class Noeud {
 
     /**
      * verification d'égalité
+     *
      * @param o : Object, donner un type Noeud pour verifier l'egalite
      * @return true si les deux objets sont des Noeuds avec un nom identique, false sinon
      */
@@ -32,12 +46,25 @@ public class Noeud {
         return res;
     }
 
-    public void ajouterArc(String destination, double cout) throws Exception{
-        Arc a = new Arc(destination,cout);
+    public void ajouterArc(String destination, double cout) throws Exception {
+        Arc a = new Arc(destination, cout);
         arcs.add(a);
     }
 
+<<<<<<< HEAD
     public String getNom() {
         return nom;
+=======
+
+    public String toString() {
+        StringBuffer st = new StringBuffer(this.nom + " -> ");
+        Arc a;
+        for (int i = 0; i < arcs.size(); i++) {
+            a = arcs.get(i);
+            st.append(a.getDest() + "("+a.getCout()+") ");
+        }
+        return st.toString();
+
+>>>>>>> adb7b5fbe09f73f3d607a1cb97f298f2f1528bca
     }
 }

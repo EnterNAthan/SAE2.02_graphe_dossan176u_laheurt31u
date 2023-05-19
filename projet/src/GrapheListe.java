@@ -1,12 +1,6 @@
 import java.util.List;
 
 public class GrapheListe implements Graphe {
-
-    List<String> ensNom;
-
-    List<Noeud> ensNoeuds;
-
-
     /**
      * @return
      */
