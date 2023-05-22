@@ -16,20 +16,20 @@ public class GrapheListe implements Graphe {
     }
     @Override
     public List<String> listeNoeud() {
-        return null;
+        return ensNom;
     }
 
     /**
      * @param n
      * @return
      */
-    public List<Arc> suivant(String n) throws Exception {
+    public List<Arc> suivants(String n) {
         for (Noeud noeud : ensNoeuds) {
             if(noeud.getNom().equals(n)){
                 return noeud.getArcs();
                 }
             }
-        throw new Exception ("le noeud n'est pas dans le graphe");
+        return null;
         }
 
 
@@ -50,6 +50,17 @@ public class GrapheListe implements Graphe {
                 noeud.ajouterArc(destination, cout);
             }
         }
+    }
+
+    public String toGraphViz(){
+        StringBuffer res = new StringBuffer("digraph G{\n");
+        for (Noeud noeud : ensNoeuds){
+            for (Arc a : noeud.getArcs()){
+                res.append(noeud.getNom() + " -> "+a.getDest()+" [label = "+a.getCout()+"]\n");
+            }
+        }
+        res.append("}");
+        return res.toString();
     }
 
     public String toString(){
