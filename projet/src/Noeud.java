@@ -64,6 +64,6 @@ public class Noeud {
             st.append(a.getDest() + "("+a.getCout()+") ");
         }
         return st.toString();
-        
+
     }
 }
