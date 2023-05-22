@@ -1,6 +1,9 @@
 import java.util.List;
 
 public class GrapheListe implements Graphe {
+    List<Noeud> ensNoeuds;
+
+    List<String> ensNom;
     /**
      * @return
      */
@@ -31,10 +34,10 @@ public class GrapheListe implements Graphe {
         }
         for (Noeud noeud : ensNoeuds) {
             if(noeud.getNom().equals(depart)){
-                noeud.ajouterArc(destination, cout);
+                noeud.ajouterArc(depart, cout);
             }
             else if(noeud.getNom().equals(destination)){
-                noeud.ajouterArc(depart, cout);
+                noeud.ajouterArc(destination, cout);
             }
         }
     }

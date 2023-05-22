@@ -11,11 +11,6 @@ public class Noeud {
     public List<Arc> getArcs() {
         return arcs;
     }
-
-    public String getNom() {
-        return nom;
-    }
-
     /**
      * attributs
      */
@@ -51,11 +46,9 @@ public class Noeud {
         arcs.add(a);
     }
 
-<<<<<<< HEAD
     public String getNom() {
         return nom;
-=======
-
+    }
     public String toString() {
         StringBuffer st = new StringBuffer(this.nom + " -> ");
         Arc a;
@@ -64,7 +57,5 @@ public class Noeud {
             st.append(a.getDest() + "("+a.getCout()+") ");
         }
         return st.toString();
-
->>>>>>> adb7b5fbe09f73f3d607a1cb97f298f2f1528bca
     }
 }
