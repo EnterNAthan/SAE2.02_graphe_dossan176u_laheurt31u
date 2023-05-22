@@ -18,18 +18,7 @@ public class GrapheListe implements Graphe {
         this.ensNom = new ArrayList<String>();
     }
 
-    public GrapheListe(String f) throws FileNotFoundException {
-        this.ensNoeuds = new ArrayList<Noeud>();
-        this.ensNom = new ArrayList<String>();
-        String ligne;
 
-        BufferedReader fichier = new BufferedReader(new FileReader(f));
-        ligne = fichier.readLine();
-        while (ligne!=null){
-
-        }
-
-    }
     @Override
     public List<String> listeNoeud() {
         return ensNom;
