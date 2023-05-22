@@ -19,9 +19,7 @@ public class GrapheListe implements Graphe {
         this.ensNom = new ArrayList<String>();
     }
 
-<<<<<<< HEAD
 
-=======
     public GrapheListe(String f) throws Exception {
         this.ensNoeuds = new ArrayList<Noeud>();
         this.ensNom = new ArrayList<String>();
@@ -36,7 +34,6 @@ public class GrapheListe implements Graphe {
         }
 
     }
->>>>>>> 8f832c9929ab85331d97cd9a3c65b95dd022d328
     @Override
     public List<String> listeNoeud() {
         return ensNom;
