@@ -23,7 +23,7 @@ public class GrapheListe implements Graphe {
      * @param n
      * @return
      */
-    public List<Arc> suivant(String n) throws Exception {
+    public List<Arc> suivants(String n) throws Exception {
         for (Noeud noeud : ensNoeuds) {
             if(noeud.getNom().equals(n)){
                 return noeud.getArcs();
