@@ -56,6 +56,6 @@ public class Noeud {
             a = arcs.get(i);
             st.append(a.getDest() + "("+a.getCout()+") ");
         }
-        return st.toString();   
+        return st.toString();
     }
 }
