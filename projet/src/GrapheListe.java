@@ -2,6 +2,7 @@
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,7 +19,7 @@ public class GrapheListe implements Graphe {
         this.ensNom = new ArrayList<String>();
     }
 
-    public GrapheListe(String f) throws FileNotFoundException {
+    public GrapheListe(String f) throws FileNotFoundException, IOException {
         this.ensNoeuds = new ArrayList<Noeud>();
         this.ensNom = new ArrayList<String>();
         String ligne;
