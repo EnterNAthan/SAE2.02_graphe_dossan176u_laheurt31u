@@ -40,7 +40,7 @@ public class GrapheListe implements Graphe {
         }
         for (Noeud noeud : ensNoeuds) {
             if(noeud.getNom().equals(depart)){
-                noeud.ajouterArc(depart, cout);
+                noeud.ajouterArc(destination, cout);
             }
         }
     }

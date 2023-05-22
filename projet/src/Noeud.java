@@ -51,9 +51,7 @@ public class Noeud {
     }
     public String toString() {
         StringBuffer st = new StringBuffer(this.nom + " -> ");
-        Arc a;
-        for (int i = 0; i < arcs.size(); i++) {
-            a = arcs.get(i);
+        for (Arc a : arcs) {
             st.append(a.getDest() + "("+a.getCout()+") ");
         }
         return st.toString();
