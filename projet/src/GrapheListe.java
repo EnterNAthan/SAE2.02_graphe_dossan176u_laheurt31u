@@ -30,16 +30,12 @@ public class GrapheListe implements Graphe {
     public void ajouterArc(String depart, String destination, double cout) throws Exception {
         if(!ensNom.contains(depart)){
             Noeud n = new Noeud(depart);
-            Noeud n2 = new Noeud(destination);
             ensNom.add(depart);
             ensNoeuds.add(n);
-            ensNoeuds.add(n2);
         }
         if(!ensNom.contains(destination)){
-            Noeud n = new Noeud(depart);
             Noeud n2 = new Noeud(destination);
             ensNom.add(destination);
-            ensNoeuds.add(n);
             ensNoeuds.add(n2);
         }
         for (Noeud noeud : ensNoeuds) {

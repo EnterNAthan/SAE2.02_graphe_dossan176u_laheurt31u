@@ -10,12 +10,6 @@ public class Main {
         gl.ajouterArc("B", "E", 11);
         System.out.println(gl);
         System.out.println(gl.listeNoeud());
-        System.out.println(gl.suivant("A"));
-        System.out.println(gl.suivant("B"));
-        System.out.println(gl.suivant("C"));
-        System.out.println(gl.suivant("D"));
-        System.out.println(gl.suivant("E"));
-        System.out.println(gl.suivant("F"));
         System.out.println(gl.toString());
     }
 }
