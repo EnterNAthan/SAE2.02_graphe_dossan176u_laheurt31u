@@ -2,6 +2,7 @@
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,7 +19,24 @@ public class GrapheListe implements Graphe {
         this.ensNom = new ArrayList<String>();
     }
 
+<<<<<<< HEAD
 
+=======
+    public GrapheListe(String f) throws Exception {
+        this.ensNoeuds = new ArrayList<Noeud>();
+        this.ensNom = new ArrayList<String>();
+        String ligne;
+        String tab[];
+        BufferedReader fichier = new BufferedReader(new FileReader(f));
+        ligne = fichier.readLine();
+        while (ligne!=null){
+            tab = ligne.split("\t");
+            this.ajouterArc(tab[0],tab[1],Double.parseDouble(tab[2]));
+            ligne = fichier.readLine();
+        }
+
+    }
+>>>>>>> 8f832c9929ab85331d97cd9a3c65b95dd022d328
     @Override
     public List<String> listeNoeud() {
         return ensNom;
