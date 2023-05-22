@@ -26,11 +26,15 @@ public class GrapheListe implements Graphe {
             Noeud n = new Noeud(depart);
             Noeud n2 = new Noeud(destination);
             ensNom.add(depart);
+            ensNoeuds.add(n);
+            ensNoeuds.add(n2);
         }
         if(!ensNom.contains(destination)){
             Noeud n = new Noeud(depart);
             Noeud n2 = new Noeud(destination);
             ensNom.add(destination);
+            ensNoeuds.add(n);
+            ensNoeuds.add(n2);
         }
         for (Noeud noeud : ensNoeuds) {
             if(noeud.getNom().equals(depart)){
