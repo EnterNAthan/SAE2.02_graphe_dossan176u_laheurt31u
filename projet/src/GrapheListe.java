@@ -56,7 +56,7 @@ public class GrapheListe implements Graphe {
         StringBuffer res = new StringBuffer("digraph G{\n");
         for (Noeud noeud : ensNoeuds){
             for (Arc a : noeud.getArcs()){
-                res.append(noeud.getNom() + " -> "+a.getDest()+" [label = "+a.getCout()+"]\n");
+                res.append(noeud.getNom() + " -> "+a.getDest()+" [label = "+(int)(a.getCout())+"]\n");
             }
         }
         res.append("}");
