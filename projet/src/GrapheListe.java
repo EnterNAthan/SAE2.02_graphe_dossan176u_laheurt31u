@@ -40,6 +40,7 @@ public class GrapheListe implements Graphe {
      * @param n
      * @return
      */
+
     public List<Arc> suivants(String n) {
         for (Noeud noeud : ensNoeuds) {
             if(noeud.getNom().equals(n)){
