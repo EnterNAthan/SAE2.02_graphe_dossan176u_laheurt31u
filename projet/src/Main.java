@@ -16,5 +16,6 @@ public class Main {
         System.out.println(gl.suivant("D"));
         System.out.println(gl.suivant("E"));
         System.out.println(gl.suivant("F"));
+        System.out.println(gl.toString());
     }
 }

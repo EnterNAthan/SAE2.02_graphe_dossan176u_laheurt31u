@@ -1,4 +1,5 @@
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class GrapheListe implements Graphe {
@@ -8,6 +9,11 @@ public class GrapheListe implements Graphe {
     /**
      * @return
      */
+
+    public GrapheListe(){
+        this.ensNoeuds = new ArrayList<Noeud>();
+        this.ensNom = new ArrayList<String>();
+    }
     @Override
     public List<String> listeNoeud() {
         return null;
