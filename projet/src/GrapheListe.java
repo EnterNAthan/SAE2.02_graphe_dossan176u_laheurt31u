@@ -42,4 +42,12 @@ public class GrapheListe implements Graphe {
             }
         }
     }
+
+    public String toString(){
+        StringBuffer st = new StringBuffer();
+        for (Noeud noeud : ensNoeuds){
+            st.append(noeud.toString()+"\n");
+        }
+        return st.toString();
+    }
 }
