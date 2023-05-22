@@ -46,9 +46,6 @@ public class GrapheListe implements Graphe {
             if(noeud.getNom().equals(depart)){
                 noeud.ajouterArc(depart, cout);
             }
-            else if(noeud.getNom().equals(destination)){
-                noeud.ajouterArc(destination, cout);
-            }
         }
     }
 
