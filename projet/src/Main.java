@@ -1,4 +1,4 @@
-public class main {
+public class Main {
     public static void main(String[] args) throws Exception {
         GrapheListe gl = new GrapheListe();
         gl.ajouterArc("A", "B", 12);
@@ -16,5 +16,6 @@ public class main {
         System.out.println(gl.suivant("D"));
         System.out.println(gl.suivant("E"));
         System.out.println(gl.suivant("F"));
+        System.out.println(gl.toString());
     }
 }
