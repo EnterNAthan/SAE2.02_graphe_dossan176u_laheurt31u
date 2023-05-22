@@ -39,11 +39,8 @@ public class GrapheListe implements Graphe {
      * @param n
      * @return
      */
-<<<<<<< HEAD
-    public List<Arc> suivants(String n) throws Exception {
-=======
+
     public List<Arc> suivants(String n) {
->>>>>>> 434745ec2708a93ff1097108758199d11a586590
         for (Noeud noeud : ensNoeuds) {
             if(noeud.getNom().equals(n)){
                 return noeud.getArcs();
