@@ -1,3 +1,4 @@
+
 import java.util.List;
 
 public class GrapheListe implements Graphe {
@@ -39,5 +40,13 @@ public class GrapheListe implements Graphe {
                 noeud.ajouterArc(destination, cout);
             }
         }
+    }
+
+    public String toString(){
+        StringBuffer st = new StringBuffer();
+        for (Noeud noeud : ensNoeuds){
+            st.append(noeud.toString()+"\n");
+        }
+        return st.toString();
     }
 }
