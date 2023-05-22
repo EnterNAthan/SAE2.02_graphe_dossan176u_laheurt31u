@@ -19,15 +19,17 @@ public class GrapheListe implements Graphe {
         this.ensNom = new ArrayList<String>();
     }
 
-    public GrapheListe(String f) throws FileNotFoundException, IOException {
+    public GrapheListe(String f) throws Exception {
         this.ensNoeuds = new ArrayList<Noeud>();
         this.ensNom = new ArrayList<String>();
         String ligne;
-
+        String tab[];
         BufferedReader fichier = new BufferedReader(new FileReader(f));
         ligne = fichier.readLine();
         while (ligne!=null){
-
+            tab = ligne.split("\t");
+            this.ajouterArc(tab[0],tab[1],Double.parseDouble(tab[2]));
+            ligne = fichier.readLine();
         }
 
     }

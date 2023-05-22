@@ -1,6 +1,6 @@
 public class Main {
     public static void main(String[] args) throws Exception {
-        GrapheListe gl = new GrapheListe();
+        /*GrapheListe gl = new GrapheListe();
         gl.ajouterArc("A", "B", 12);
         gl.ajouterArc("C", "A", 19);
         gl.ajouterArc("A", "D", 87);
@@ -10,6 +10,9 @@ public class Main {
         gl.ajouterArc("B", "E", 11);
         System.out.println(gl.toString());
 
-        System.out.println(gl.toGraphViz());
+        System.out.println(gl.toGraphViz());*/
+
+        GrapheListe test = new GrapheListe("Graphes/Graphe1.txt");
+        System.out.print(test.toString());
     }
 }
