@@ -23,9 +23,16 @@ public class GrapheListe implements Graphe {
      * @param n
      * @return
      */
-    public List<String> suivant(String n) {
-        return null;
-    }
+    public List<Arc> suivant(String n) throws Exception {
+        for (Noeud noeud : ensNoeuds) {
+            if(noeud.getNom().equals(n)){
+                return noeud.getArcs();
+                }
+            }
+        throw new Exception ("le noeud n'est pas dans le graphe");
+        }
+
+
 
     public void ajouterArc(String depart, String destination, double cout) throws Exception {
         if(!ensNom.contains(depart)){
@@ -40,7 +47,7 @@ public class GrapheListe implements Graphe {
         }
         for (Noeud noeud : ensNoeuds) {
             if(noeud.getNom().equals(depart)){
-                noeud.ajouterArc(depart, cout);
+                noeud.ajouterArc(destination, cout);
             }
         }
     }
