@@ -26,7 +26,7 @@ public class BellmanFord {
         while(!pF){
             pF = true;
             for (int i = 0; i<listeNoeud.size();i++){
-                for (int j = 0;i<g.suivants(listeNoeud.get(i)).size();i++){
+                for (int j = 0;j<g.suivants(listeNoeud.get(i)).size();j++){
                     noeudEtu = g.suivants(listeNoeud.get(i)).get(j).getDest();
                     valNoeudEtu = v.getValeur(noeudEtu);
                     nouvVal = v.getValeur(listeNoeud.get(i))+g.suivants(listeNoeud.get(i)).get(j).getCout();
