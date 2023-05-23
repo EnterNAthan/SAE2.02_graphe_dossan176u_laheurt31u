@@ -88,4 +88,13 @@ public class Valeur {
 
     }
 
+    public List<String> calculerChemin(String destination) {
+        ArrayList<String> res = new ArrayList<String>();
+        while (this.getParent(destination) != null) {
+            res.add(0, destination);
+            destination = this.getParent(destination);
+        }
+        res.add(0, destination);
+        return res;
+    }
 }

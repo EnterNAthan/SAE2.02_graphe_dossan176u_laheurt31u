@@ -1,3 +1,5 @@
+import java.util.List;
+
 public class Main {
     public static void main(String[] args) throws Exception {
         GrapheListe gl = new GrapheListe();
@@ -9,6 +11,12 @@ public class Main {
         gl.ajouterArc("E", "D", 43);
         gl.ajouterArc("B", "E", 11);
         System.out.println(BellmanFord.resoudre(gl,"A"));
+        Valeur v = BellmanFord.resoudre(gl,"A");
+
+        List<String> l = v.calculerChemin("C");
+        for (String s : l){
+            System.out.println(s);
+        }
 
     }
 }
