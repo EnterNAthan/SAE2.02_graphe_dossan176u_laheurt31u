@@ -9,7 +9,7 @@ public class BellmanFord {
 
     }
 
-    public Valeur resoudre(Graphe g, String depart) {
+    public static Valeur resoudre(Graphe g, String depart) {
         Valeur v = new Valeur();
         List<String> listeNoeud = g.listeNoeud();
         for (String s : listeNoeud) {

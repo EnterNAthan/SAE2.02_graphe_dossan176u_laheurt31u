@@ -8,14 +8,10 @@ public class Main {
         gl.ajouterArc("D", "C", 10);
         gl.ajouterArc("E", "D", 43);
         gl.ajouterArc("B", "E", 11);
-        System.out.println(gl.toString());
-
-        System.out.println(gl.suivants("A"));
-        System.out.println(gl.toGraphViz());
+        System.out.println(BellmanFord.resoudre(gl,"A"));
 
 
-        GrapheListe test = new GrapheListe("Graphes/Graphe1.txt");
-        System.out.print(test.toString());
+
 
     }
 }
