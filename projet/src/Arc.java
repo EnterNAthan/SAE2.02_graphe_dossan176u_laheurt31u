@@ -11,11 +11,11 @@ public class Arc {
      *
      */
     public String getDest() {
-        return dest;
+        return this.dest;
     }
 
     public double getCout() {
-        return cout;
+        return this.cout;
     }
 
     /**
