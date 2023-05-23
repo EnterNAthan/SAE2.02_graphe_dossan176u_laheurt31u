@@ -10,8 +10,5 @@ public class Main {
         gl.ajouterArc("B", "E", 11);
         System.out.println(BellmanFord.resoudre(gl,"A"));
 
-
-
-
     }
 }
