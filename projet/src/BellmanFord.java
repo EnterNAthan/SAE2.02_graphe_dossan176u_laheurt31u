@@ -11,7 +11,7 @@ public class BellmanFord {
 
     public static Valeur resoudre(Graphe g, String depart) {
         Valeur v = new Valeur();
-        List<String> listeNoeud = g.listeNoeud();
+        List<String> listeNoeud = g.listeNoeuds();
         for (String s : listeNoeud) {
             if (s.equals(depart)) v.setValeur(s, 0);
             else v.setValeur(s, Double.MAX_VALUE);

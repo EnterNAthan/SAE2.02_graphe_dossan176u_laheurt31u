@@ -2,21 +2,23 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) throws Exception {
-        GrapheListe gl = new GrapheListe();
-        gl.ajouterArc("A", "B", 12);
-        gl.ajouterArc("C", "A", 19);
-        gl.ajouterArc("A", "D", 87);
-        gl.ajouterArc("D", "B", 23);
-        gl.ajouterArc("D", "C", 10);
-        gl.ajouterArc("E", "D", 43);
-        gl.ajouterArc("B", "E", 11);
-        System.out.println(BellmanFord.resoudre(gl,"A"));
+        GrapheListe gl = new GrapheListe("Graphes/Graphe_boucle.txt");
         Valeur v = BellmanFord.resoudre(gl,"A");
-
-        List<String> l = v.calculerChemin("C");
-        for (String s : l){
-            System.out.println(s);
-        }
+        Valeur v2 = Dijkstra.resoudre(gl,"A");
+        System.out.println(v);
+        System.out.println(v2);
+        /**
+         * 22) BellmanFord attribue les valeurs 20 au noeud B et 30 a G avant de les mettre a jour en parcourant le chemin depuis C
+         * tandis que Dijkstra n'attribue jamais de valeur fausse pendant l'algoithme puisqu'il développe toujours l'arc au cout
+         * le plus faible.
+         *
+         * Il semble que l'algorithme Dijkstra soit plus rapide que Bellman-Ford puisqu'il efectue toutes les actions du premier coup
+         * sans boucler un grand nombre de fois. La complexite de Dijkstra semble aussi moins elevee a l'oeil.
+         */
+//        List<String> l = v.calculerChemin("C");
+//        for (String s : l){
+//            System.out.println(s);
+//        }
 
     }
 }

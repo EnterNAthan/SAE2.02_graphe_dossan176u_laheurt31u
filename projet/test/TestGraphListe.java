@@ -35,7 +35,7 @@ public class TestGraphListe {
         GrapheListe gl = new GrapheListe();
         gl.ajouterArc("A", "B", 12);
         gl.ajouterArc("C", "A", 19);
-        assertEquals("[A, B, C]", gl.listeNoeud().toString());
+        assertEquals("[A, B, C]", gl.listeNoeuds().toString());
     }
 
     @Test
