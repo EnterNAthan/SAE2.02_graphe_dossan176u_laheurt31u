@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -28,37 +29,32 @@ import java.util.List;
  * Fin
  */
 public class Dijkstra {
-    public static Valeur resoudre (Graphe g, String depart){
+    public static Valeur resoudre(Graphe g, String depart){
         Valeur v = new Valeur();
-        List<String> l = g.listeNoeud();
-        List<String> compare;
-        boolean present;
-        for (String s : l){
-            if (s.equals(depart)) v.setValeur(s,0.);
-            else v.setValeur(s,Double.MAX_VALUE);
-            v.setParent(s,null);
+        ArrayList<Noeud> Q = new ArrayList<Noeud>();
+        for (String s : g.listeNoeuds()) {
+            Noeud n = new Noeud(s);
+            v.setValeur(s, Double.MAX_VALUE);
+            v.setParent(s, null);
+            Q.add(n);
         }
-        String sMin;
-        String tempMin;
-        double min;
-        while (l.size()!=0){
-            min = Double.MAX_VALUE;
-            for (String s : l){
-                tempMin = v.getValeur(s);
-                if (tempMin<min){
-                    min = tempMin;
-                    sMin = s;
+        v.setValeur(depart, 0);
+        while (Q.size() != 0){
+            Noeud u = Q.get(0);
+            for (Noeud n : Q) {
+                if (v.getValeur(n.getNom()) < v.getValeur(u.getNom())) {
+                    u = n;
                 }
             }
-            List<String> compare = g.listeNoeud();;
-            for (String s: compare){
-                present = false;
-                for (int i = 0;i<compare.size();i++){
-                    for (int j = 0;j<g.suivants(compare.get(i)).size();j++){
-                        
-                    }
+            Q.remove(u);
+            for (Arc a : g.suivants(u.getNom())) {
+                double D = v.getValeur(u.getNom()) + a.getCout();
+                if (D < v.getValeur(a.getDest())) {
+                    v.setValeur(a.getDest(), D);
+                    v.setParent(a.getDest(), u.getNom());
                 }
             }
         }
+        return v;
     }
 }

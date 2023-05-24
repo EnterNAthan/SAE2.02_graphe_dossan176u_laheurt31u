@@ -12,11 +12,12 @@ public class Main {
         gl.ajouterArc("B", "E", 11);
         System.out.println(BellmanFord.resoudre(gl,"A"));
         Valeur v = BellmanFord.resoudre(gl,"A");
-
-        List<String> l = v.calculerChemin("C");
-        for (String s : l){
-            System.out.println(s);
-        }
+        Valeur v2 = Dijkstra.resoudre(gl,"A");
+        System.out.println(v2);
+//        List<String> l = v.calculerChemin("C");
+//        for (String s : l){
+//            System.out.println(s);
+//        }
 
     }
 }

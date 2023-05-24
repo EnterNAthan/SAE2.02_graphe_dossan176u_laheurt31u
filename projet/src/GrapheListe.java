@@ -37,7 +37,7 @@ public class GrapheListe implements Graphe {
 
     }
     @Override
-    public List<String> listeNoeud() {
+    public List<String> listeNoeuds() {
         return ensNom;
     }
 
