@@ -31,26 +31,26 @@ import java.util.List;
 public class Dijkstra {
     public static Valeur resoudre(Graphe g, String depart){
         Valeur v = new Valeur();
-        ArrayList<Noeud> Q = new ArrayList<Noeud>();
+        ArrayList<Noeud> ln = new ArrayList<Noeud>();
         for (String s : g.listeNoeuds()) {
             Noeud n = new Noeud(s);
             v.setValeur(s, Double.MAX_VALUE);
             v.setParent(s, null);
-            Q.add(n);
+            ln.add(n);
         }
         v.setValeur(depart, 0);
-        while (Q.size() != 0){
-            Noeud u = Q.get(0);
-            for (Noeud n : Q) {
+        while (ln.size() != 0){
+            Noeud u = ln.get(0);
+            for (Noeud n : ln) {
                 if (v.getValeur(n.getNom()) < v.getValeur(u.getNom())) {
                     u = n;
                 }
             }
-            Q.remove(u);
+            ln.remove(u);
             for (Arc a : g.suivants(u.getNom())) {
-                double D = v.getValeur(u.getNom()) + a.getCout();
-                if (D < v.getValeur(a.getDest())) {
-                    v.setValeur(a.getDest(), D);
+                double Doub = v.getValeur(u.getNom()) + a.getCout();
+                if (Doub < v.getValeur(a.getDest())) {
+                    v.setValeur(a.getDest(), Doub);
                     v.setParent(a.getDest(), u.getNom());
                 }
             }
