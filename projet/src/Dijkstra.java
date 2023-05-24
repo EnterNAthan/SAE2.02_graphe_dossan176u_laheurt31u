@@ -33,14 +33,14 @@ public class Dijkstra {
         List<String> l = g.listeNoeud();
         List<String> compare;
         boolean present;
+        String sMin;
+        String tempMin;
+        double min;
         for (String s : l){
             if (s.equals(depart)) v.setValeur(s,0.);
             else v.setValeur(s,Double.MAX_VALUE);
             v.setParent(s,null);
         }
-        String sMin;
-        String tempMin;
-        double min;
         while (l.size()!=0){
             min = Double.MAX_VALUE;
             for (String s : l){
@@ -55,8 +55,12 @@ public class Dijkstra {
                 present = false;
                 for (int i = 0;i<compare.size();i++){
                     for (int j = 0;j<g.suivants(compare.get(i)).size();j++){
-                        
+                        if (g.suivants(compare.get(i)).get(j).getDest() = sMin){
+                            present = true;
+                        }
                     }
+                    if (present = true)
+
                 }
             }
         }
