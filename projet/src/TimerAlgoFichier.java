@@ -8,8 +8,8 @@ import java.io.FileWriter;
 public class TimerAlgoFichier {
     public static void main(String[] args) throws Exception {
         // setup
-        File f = new File("Tableau_timers/tableau.xls");
-        FileWriter monF = new FileWriter("Tableau_timers/tableau.xls");
+        File f = new File("Tableau_timers/GraphesFichiers.xls");
+        FileWriter monF = new FileWriter("Tableau_timers/GraphesFichiers.xls");
         String lecture;
         GrapheListe gl;
         int ajout = 1;
