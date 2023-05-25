@@ -75,6 +75,21 @@ public class GrapheListe implements Graphe {
         }
     }
 
+    public String timerAlgo(){
+        Valeur v1, v2;
+        long start1, start2, end1, end2, temps1, temps2;
+        start1 = System.nanoTime();
+        v1 = BellmanFord.resoudre(this, "1");
+        end1 = System.nanoTime();
+        temps1 = end1 - start1;
+
+        start2 = System.nanoTime();
+        v2 = Dijkstra.resoudre(this, "1");
+        end2 = System.nanoTime();
+        temps2 = end2 - start2;
+        return (temps1 + ";" + temps2 + "\n");
+    }
+
     public String toGraphViz(){
         StringBuffer res = new StringBuffer("digraph G{\n");
         for (Noeud noeud : ensNoeuds){
