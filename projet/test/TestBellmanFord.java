@@ -3,9 +3,9 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
-public class TestBellemanFord {
+public class TestBellmanFord {
     @Test
-    public void TestBellemanFord() throws Exception {
+    public void TestBellmanFord() throws Exception {
         GrapheListe gl = new GrapheListe();
         gl.ajouterArc("A", "B", 12);
         gl.ajouterArc("C", "A", 19);

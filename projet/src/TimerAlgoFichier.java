@@ -8,8 +8,8 @@ import java.io.FileWriter;
 public class TimerAlgoFichier {
     public static void main(String[] args) throws Exception {
         // setup
-        File f = new File("Tableau_timers/tableau.xls");
-        FileWriter monF = new FileWriter("Tableau_timers/tableau.xls");
+        File f = new File("Tableau_timers/GraphesFichiers.xls");
+        FileWriter monF = new FileWriter("Tableau_timers/GraphesFichiers.xls");
         String lecture;
         GrapheListe gl;
         int ajout = 1;
@@ -18,7 +18,6 @@ public class TimerAlgoFichier {
         monF.write("time;BellmanFord;Dijkstra\n");
 
         while (!fin) {
-            if (dizaine == 90 && unite == 4) fin = true;
             if (dizaine == 0) {
                 lecture = "Graphes/Graphe" + unite + ".txt";
             } else
@@ -29,6 +28,7 @@ public class TimerAlgoFichier {
 
 
             unite += 1;
+            if (dizaine == 90 && unite == 5) fin = true;
             if (dizaine == 10)
                 ajout = 10;
 
