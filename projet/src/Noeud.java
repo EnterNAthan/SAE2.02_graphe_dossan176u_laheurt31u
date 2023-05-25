@@ -46,6 +46,16 @@ public class Noeud {
         arcs.add(a);
     }
 
+    public void ajouterArcLab(String destination) {
+        try {
+            Arc a = new Arc(destination);
+            arcs.add(a);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+
+    }
+
     public String getNom() {
         return nom;
     }

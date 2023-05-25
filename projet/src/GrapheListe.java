@@ -85,6 +85,24 @@ public class GrapheListe implements Graphe {
         }
     }
 
+    public void ajouterArcLab(String depart, String destination) {
+        if(!ensNom.contains(depart)){
+            Noeud n = new Noeud(depart);
+            ensNom.add(depart);
+            ensNoeuds.add(n);
+        }
+        if(!ensNom.contains(destination)){
+            Noeud n2 = new Noeud(destination);
+            ensNom.add(destination);
+            ensNoeuds.add(n2);
+        }
+        for (Noeud noeud : ensNoeuds) {
+            if(noeud.getNom().equals(depart)){
+                noeud.ajouterArcLab(destination);
+            }
+        }
+    }
+
     public String timerAlgo(){
         Valeur v1, v2;
         long start1, start2, end1, end2, temps1, temps2;

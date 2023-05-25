@@ -30,6 +30,10 @@ public class Arc {
         else throw new Exception("cout négatif");
     }
 
+    public Arc(String n) {
+        this.dest = n;
+    }
+
     public String toString(){
         return this.dest+", "+this.cout;
     }
