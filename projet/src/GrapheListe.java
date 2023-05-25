@@ -130,7 +130,7 @@ public class GrapheListe implements Graphe {
     public void genererGraphe(int taille, int depart, int arrivee) throws Exception {
 
         //teste si les paramètres sont négatifs
-        if (taille == 0 || depart == 0 || arrivee == 0)
+        if (taille <= 0 || depart <= 0 || arrivee <= 0 || depart == arrivee || depart > arrivee)
             throw new Exception("Les paramètes passés sont incorrects");
 
         //crée un tableau qui contiendra les noeuds
@@ -150,7 +150,7 @@ public class GrapheListe implements Graphe {
         for (int i = 1; i < taille; i++) {
 
             if (i + 1 != arrivee) {
-                noeuds[i] = i + 1;
+                noeuds[i] = i + depart;
                 this.ensNom.add(valueOf(noeuds[i]));
                 this.ensNoeuds.add(new Noeud(valueOf(noeuds[i])));
             } else {
