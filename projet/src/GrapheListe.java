@@ -130,7 +130,7 @@ public class GrapheListe implements Graphe {
     public void genererGraphe(int taille, int depart, int arrivee) throws Exception {
 
         //teste si les paramètres sont négatifs
-        if (taille == 0 || depart == 0 || arrivee == 0)
+        if (taille <= 0 || depart <= 0 || arrivee <= 0)
             throw new Exception("Les paramètes passés sont incorrects");
 
         //crée un tableau qui contiendra les noeuds
