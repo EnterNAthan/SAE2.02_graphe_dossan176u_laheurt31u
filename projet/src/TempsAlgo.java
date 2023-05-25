@@ -2,6 +2,10 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 
+/**
+ * la methode plante mais cela semble etre du a un depassement de la memoire que je ne sais pas regler.
+ * cependant le tableau est assez rempli pour constater que Dijkstra est bien plus rapide dans tous les cas
+ */
 public class TempsAlgo {
     public static void main(String[] args) throws Exception {
         // setup
