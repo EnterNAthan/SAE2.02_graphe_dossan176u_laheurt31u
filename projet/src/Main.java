@@ -2,7 +2,7 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) throws Exception {
-        GrapheListe gl = new GrapheListe("Graphes/Graphe_boucle.txt");
+        /*GrapheListe gl = new GrapheListe("Graphes/Graphe_boucle.txt");
         Valeur v = BellmanFord.resoudre(gl,"A");
         Valeur v2 = Dijkstra.resoudre(gl,"A");
         System.out.println(v);
@@ -19,6 +19,12 @@ public class Main {
 //        for (String s : l){
 //            System.out.println(s);
 //        }
+
+
+        // Génération d'un graphe aléatoire avec le 3e constructeur
+        GrapheListe g3 = new GrapheListe(10, 1, 10);
+
+        System.out.println(g3.toGraphViz());
 
     }
 }
