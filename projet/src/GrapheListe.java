@@ -45,7 +45,7 @@ public class GrapheListe implements Graphe {
 
         this.genererGraphe(taille, debut, arrivee);
     }
-    
+
     @Override
     public List<String> listeNoeuds() {
         return ensNom;
@@ -125,11 +125,11 @@ public class GrapheListe implements Graphe {
         int random;
         int arc;
         //attribue la valeur de depart en tant que premier noeud
-        this.ensNom.add(valueOf(depart));
-        this.ensNoeuds.add(new Noeud(ensNom.get(depart)));
+        noeuds[0] = depart;
+        this.ensNom.add(valueOf(noeuds[0]));
+        this.ensNoeuds.add(new Noeud(valueOf(noeuds[0])));
         //attribue la valeur d'arrivee en tant que dernier noeud
-        noeuds[taille] = arrivee;
-        this.ensNom.add(valueOf(noeuds[taille]));
+        noeuds[taille - 1] = arrivee;
 
         //ajoute les noeuds dans l'attribut ensNoeud
         for (int i = 1; i < taille; i++) {
@@ -137,14 +137,15 @@ public class GrapheListe implements Graphe {
             if (i + 1 != arrivee) {
                 noeuds[i] = i + 1;
                 this.ensNom.add(valueOf(noeuds[i]));
-                this.ensNoeuds.add(new Noeud(ensNom.get(i)));
+                this.ensNoeuds.add(new Noeud(valueOf(noeuds[i])));
             } else {
-                this.ensNoeuds.add(new Noeud(ensNom.get(i)));
+                this.ensNom.add(valueOf(noeuds[i]));
+                this.ensNoeuds.add(new Noeud(valueOf(noeuds[i])));
             }
         }
 
         // boucle sur le nombre de noeuds
-        for (int i = 0; i < taille; i++) {
+        for (int i = 0; i < ensNoeuds.size(); i++) {
             // cree un nombre d'arcs aleatoire
             int nbArcs = (int) (Math.random() * taille);
             // boucle sur le nombre d'arcs
