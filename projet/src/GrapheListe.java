@@ -6,6 +6,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import static java.lang.String.valueOf;
+
 public class GrapheListe implements Graphe {
     List<Noeud> ensNoeuds;
 
@@ -36,6 +38,14 @@ public class GrapheListe implements Graphe {
         }
 
     }
+
+    public GrapheListe(int taille, int debut, int arrivee) throws Exception {
+        this.ensNoeuds = new ArrayList<Noeud>();
+        this.ensNom = new ArrayList<String>();
+
+        this.genererGraphe(taille, debut, arrivee);
+    }
+    
     @Override
     public List<String> listeNoeuds() {
         return ensNom;
@@ -92,5 +102,59 @@ public class GrapheListe implements Graphe {
             st.append(noeud.toString()+"\n");
         }
         return st.toString();
+    }
+
+    /**
+     * genererGraphe methode
+     * Build a random graph
+     * @param taille int Size of the node's list
+     * @param depart int Name of the first node
+     * @param arrivee int Name of the last node
+     * @throws Exception throw Exception if one of the number is equal to 0
+     */
+    public void genererGraphe(int taille, int depart, int arrivee) throws Exception {
+
+        //teste si les paramètres sont négatifs
+        if (taille == 0 || depart == 0 || arrivee == 0)
+            throw new Exception("Les paramètes passés sont incorrects");
+
+        //crée un tableau qui contiendra les noeuds
+        int[] noeuds = new int[taille];
+        //creation variables random (qui generera nombres aléatoires)
+        //                   arc (qui generera des arcs de taille aléatoire)
+        int random;
+        int arc;
+        //attribue la valeur de depart en tant que premier noeud
+        this.ensNom.add(valueOf(depart));
+        this.ensNoeuds.add(new Noeud(ensNom.get(depart)));
+        //attribue la valeur d'arrivee en tant que dernier noeud
+        noeuds[taille] = arrivee;
+        this.ensNom.add(valueOf(noeuds[taille]));
+
+        //ajoute les noeuds dans l'attribut ensNoeud
+        for (int i = 1; i < taille; i++) {
+
+            if (i + 1 != arrivee) {
+                noeuds[i] = i + 1;
+                this.ensNom.add(valueOf(noeuds[i]));
+                this.ensNoeuds.add(new Noeud(ensNom.get(i)));
+            } else {
+                this.ensNoeuds.add(new Noeud(ensNom.get(i)));
+            }
+        }
+
+        // boucle sur le nombre de noeuds
+        for (int i = 0; i < taille; i++) {
+            // cree un nombre d'arcs aleatoire
+            int nbArcs = (int) (Math.random() * taille);
+            // boucle sur le nombre d'arcs
+            for (int y = 0; y < nbArcs; y++) {
+
+                random = (int) (Math.random() * (taille - 1) + 1);
+                arc = (int) (Math.random() * 100);
+                // ajoute des arcs entre les noeuds
+                this.ajouterArc(ensNoeuds.get(i).getNom(), ensNoeuds.get(random).getNom(), arc);
+            }
+        }
     }
 }
