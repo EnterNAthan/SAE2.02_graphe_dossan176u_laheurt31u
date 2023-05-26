@@ -215,7 +215,7 @@ public class Labyrinthe {
             Labyrinthe laby = new Labyrinthe("labySimple/laby0.txt");
             GrapheListe g = laby.genererGraphe();
             System.out.println(g.toGraphViz());
-            
+            System.out.println(Dijkstra.resoudre(g,"(1, 1)"));
         }
         catch(Exception e){
             System.out.println(e);
