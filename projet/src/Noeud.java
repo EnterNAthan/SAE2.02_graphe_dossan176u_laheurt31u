@@ -40,6 +40,7 @@ public class Noeud {
         return res;
     }
 
+    
     public void ajouterArc(String destination, double cout) throws Exception {
         Arc a = new Arc(destination, cout);
         arcs.add(a);
