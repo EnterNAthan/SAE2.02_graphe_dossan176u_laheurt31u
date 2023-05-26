@@ -1,8 +1,5 @@
 
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -135,6 +132,57 @@ public class GrapheListe implements Graphe {
             st.append(noeud.toString()+"\n");
         }
         return st.toString();
+    }
+
+
+    /**
+     * ecrireFichier methode
+     * Write a graph in a file by a matrice of elements
+     * @param file String Name of the file of the matrice
+     * @throws IOException
+     */
+    public static void ecrireFichier(String file) throws IOException {
+
+        //test sur le fichier
+        if (file == null) {
+            throw new FileNotFoundException("Il n'y a pas de Fichier");
+        }
+
+        //lecture du fichier pour recuperer les caracteres
+        BufferedReader f = new BufferedReader(new FileReader(file));
+
+        //création du fichier  d'ecriture
+        BufferedWriter fichier = new BufferedWriter(new FileWriter(""));
+
+        //lecture de la première ligne du fichier
+        String ligne = f.readLine();
+        String[] tabLigne = ligne.split("\t");
+
+        ligne = f.readLine();
+
+        fichier.write("digraph G {\n");
+
+        while (ligne != null) {
+
+            //création de colonnes sur la 2e ligne du fichier
+            String[] colonne = ligne.split("\t");
+
+            //création du fichier contenant une liste d'arc
+            for (int i = 1; i < colonne.length; i++) {
+                //ajoute seulement les éléments ayant un arc entre (0. = cout nul -> pas d'arc)
+                if (!colonne[i].equals("0."))
+                    //ajout des éléments au fichier
+                    fichier.write(colonne[0] + " -> " + tabLigne[i] + " [label = " + colonne[i] + "]");
+                fichier.newLine();
+            }
+            ligne = f.readLine();
+        }
+        //fin du fichier
+        fichier.write("}");
+
+        //fermeture des 2 fichiers
+        f.close();
+        fichier.close();
     }
 
     public List<Noeud> getEnsNoeuds() {

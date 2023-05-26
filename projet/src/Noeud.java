@@ -22,7 +22,7 @@ public class Noeud {
      */
     public Noeud(String n) {
         this.nom = n;
-        arcs = new ArrayList<Arc>();
+        this.arcs = new ArrayList<Arc>();
     }
 
     /**
@@ -35,8 +35,7 @@ public class Noeud {
         boolean res;
         if (o instanceof Noeud) {
             Noeud n = (Noeud) (o);
-            if (n.nom.equals(this.nom)) res = true;
-            else res = false;
+            res = n.nom.equals(this.nom);
         } else res = false;
         return res;
     }
@@ -60,9 +59,9 @@ public class Noeud {
         return nom;
     }
     public String toString() {
-        StringBuffer st = new StringBuffer(this.nom + " -> ");
+        StringBuilder st = new StringBuilder(this.nom + " -> ");
         for (Arc a : arcs) {
-            st.append(a.getDest() + "("+a.getCout()+") ");
+            st.append(a.getDest()).append("(").append(a.getCout()).append(") ");
         }
         return st.toString();
     }
