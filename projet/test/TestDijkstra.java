@@ -2,8 +2,16 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
+/**
+ * The type Test dijkstra.
+ */
 public class TestDijkstra {
 
+    /**
+     * Test dijkstra.
+     *
+     * @throws Exception the exception
+     */
     @Test
     public void TestDijkstra() throws Exception {
         GrapheListe gl = new GrapheListe();

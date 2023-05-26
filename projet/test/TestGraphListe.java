@@ -7,9 +7,17 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
 
+/**
+ * The type Test graph liste.
+ */
 public class TestGraphListe {
 // créer des test pour les méthodes de la classe GrapheListe en junit
 
+    /**
+     * To graph viz.
+     *
+     * @throws Exception the exception
+     */
     @Test
     public void toGraphViz() throws Exception {
         GrapheListe gl = new GrapheListe();
@@ -31,6 +39,11 @@ public class TestGraphListe {
                 "}", gl.toGraphViz());
     }
 
+    /**
+     * To graph viz not ok.
+     *
+     * @throws Exception the exception
+     */
     @Test
     public void toGraphViz_NotOK() throws Exception {
         GrapheListe gl = new GrapheListe();
@@ -52,6 +65,11 @@ public class TestGraphListe {
                 "}", gl.toGraphViz());
     }
 
+    /**
+     * Test liste.
+     *
+     * @throws Exception the exception
+     */
     @Test
     public void TestListe() throws Exception {
         GrapheListe gl = new GrapheListe();
@@ -60,6 +78,11 @@ public class TestGraphListe {
         assertEquals("[A, B, C]", gl.listeNoeuds().toString());
     }
 
+    /**
+     * Test suivants.
+     *
+     * @throws Exception the exception
+     */
     @Test
     public void testSuivants()throws Exception{
         GrapheListe gl = new GrapheListe();
@@ -76,6 +99,11 @@ public class TestGraphListe {
         assertEquals(arcs.toString(), gl.suivants("A").toString());
     }
 
+    /**
+     * Test constructeur.
+     *
+     * @throws Exception the exception
+     */
     @Test
     public void TestConstructeur() throws Exception {
         GrapheListe gl = new GrapheListe("Graphes/Graphe1.txt");

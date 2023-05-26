@@ -1,3 +1,6 @@
+/**
+ * The type Arc.
+ */
 public class Arc {
     /**
      * Attributs
@@ -7,21 +10,31 @@ public class Arc {
     private double cout;
 
 
-    /**getters
+    /**
+     * getters
      *
+     * @return the dest
      */
     public String getDest() {
         return this.dest;
     }
 
+    /**
+     * Gets cout.
+     *
+     * @return the cout
+     */
     public double getCout() {
         return this.cout;
     }
 
     /**
      * Constructeur qui récupere le noeud et son cout
-     **/
-
+     *
+     * @param n the n
+     * @param c the c
+     * @throws Exception the exception
+     */
     public Arc(String n, double c) throws Exception{
         this.dest = n;
         if (cout >= 0) {

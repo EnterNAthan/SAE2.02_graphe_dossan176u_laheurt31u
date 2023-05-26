@@ -1,9 +1,17 @@
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * The type Graphe labyrinthe.
+ */
 public class GrapheLabyrinthe implements Graphe {
     private Labyrinthe laby;
 
+    /**
+     * Instantiates a new Graphe labyrinthe.
+     *
+     * @param l the l
+     */
     public GrapheLabyrinthe(Labyrinthe l) {
         this.laby = l;
     }
@@ -39,6 +47,15 @@ public class GrapheLabyrinthe implements Graphe {
         return l;
     }
 
+    /**
+     * Ajouter arc.
+     *
+     * @param i    the
+     * @param j    the j
+     * @param l    the l
+     * @param murs the murs
+     * @throws Exception the exception
+     */
     public void ajouterArc(int i, int j, ArrayList<Arc> l, boolean[][] murs) throws Exception {
         int[] coor = Labyrinthe.getSuivant(i, j, Labyrinthe.HAUT);
         TESTACTION(i, l, murs, coor);
@@ -57,6 +74,12 @@ public class GrapheLabyrinthe implements Graphe {
         }
     }
 
+    /**
+     * The entry point of application.
+     *
+     * @param args the input arguments
+     * @throws Exception the exception
+     */
     public static void main(String[] args) throws Exception {
         GrapheLabyrinthe gl = new GrapheLabyrinthe(new Labyrinthe("labySimple/laby0.txt"));
         List<String> ls= gl.listeNoeuds();

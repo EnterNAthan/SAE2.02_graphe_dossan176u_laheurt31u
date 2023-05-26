@@ -28,6 +28,13 @@ import java.util.ArrayList;
  * Fin
  */
 public class Dijkstra {
+    /**
+     * Resoudre valeur.
+     *
+     * @param g      the g
+     * @param depart the depart
+     * @return the valeur
+     */
     public static Valeur resoudre(Graphe g, String depart) {
         Valeur v = new Valeur();
 
