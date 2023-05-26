@@ -1,12 +1,15 @@
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * The type Noeud.
+ */
 public class Noeud {
 
     /**
      * getter
      *
-     * @return arcs
+     * @return arcs arcs
      */
     public List<Arc> getArcs() {
         return arcs;
@@ -19,6 +22,8 @@ public class Noeud {
 
     /**
      * constructeur
+     *
+     * @param n the n
      */
     public Noeud(String n) {
         this.nom = n;
@@ -39,13 +44,24 @@ public class Noeud {
         } else res = false;
         return res;
     }
-
     
+    /**
+     * Ajouter arc.
+     *
+     * @param destination the destination
+     * @param cout        the cout
+     * @throws Exception the exception
+     */
     public void ajouterArc(String destination, double cout) throws Exception {
         Arc a = new Arc(destination, cout);
         arcs.add(a);
     }
 
+    /**
+     * Ajouter arc lab.
+     *
+     * @param destination the destination
+     */
     public void ajouterArcLab(String destination) {
         try {
             Arc a = new Arc(destination,0);
@@ -56,6 +72,11 @@ public class Noeud {
 
     }
 
+    /**
+     * Gets nom.
+     *
+     * @return the nom
+     */
     public String getNom() {
         return nom;
     }

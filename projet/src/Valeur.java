@@ -16,6 +16,9 @@ public class Valeur {
      * dans le programme de 2 annee.
      */
     Map<String, Double> valeur;
+    /**
+     * The Parent.
+     */
     Map<String, String> parent;
 
     /**
@@ -88,6 +91,12 @@ public class Valeur {
 
     }
 
+    /**
+     * Calculer chemin list.
+     *
+     * @param destination the destination
+     * @return the list
+     */
     public List<String> calculerChemin(String destination) {
         ArrayList<String> res = new ArrayList<String>();
         while (this.getParent(destination) != null) {

@@ -15,15 +15,30 @@ public class Labyrinthe {
      * Constantes char
      */
     public static final char MUR = 'X';
+    /**
+     * The constant PJ.
+     */
     public static final char PJ = 'P';
+    /**
+     * The constant VIDE.
+     */
     public static final char VIDE = '.';
 
     /**
      * constantes actions possibles
      */
     public static final String HAUT = "Haut";
+    /**
+     * The constant BAS.
+     */
     public static final String BAS = "Bas";
+    /**
+     * The constant GAUCHE.
+     */
     public static final String GAUCHE = "Gauche";
+    /**
+     * The constant DROITE.
+     */
     public static final String DROITE = "Droite";
 
 
@@ -65,6 +80,11 @@ public class Labyrinthe {
         return res;
     }
 
+    /**
+     * Generer graphe graphe liste.
+     *
+     * @return the graphe liste
+     */
     public GrapheListe genererGraphe() {
         GrapheListe g = new GrapheListe();
         int[] coor;
@@ -81,6 +101,14 @@ public class Labyrinthe {
         return g;
     }
 
+    /**
+     * Verifier arc.
+     *
+     * @param g      the g
+     * @param i      the
+     * @param j      the j
+     * @param action the action
+     */
     public void verifierArc(GrapheListe g, int i, int j, String action) {
         int[] coor = Labyrinthe.getSuivant(i, j, action);
         if (coor[0] >= 0 && coor[0] < this.murs.length && coor[1] >= 0 && coor[1] < this.murs[i].length
@@ -149,7 +177,10 @@ public class Labyrinthe {
      * deplace le personnage en fonction de l'action.
      * gere la collision avec les murs
      *
+     * @param i      the
+     * @param j      the j
      * @param action une des actions possibles
+     * @return the int [ ]
      */
     public int[] deplacerPerso(int i, int j, String action) {
         // case courante
@@ -183,7 +214,7 @@ public class Labyrinthe {
     /**
      * return taille selon Y
      *
-     * @return
+     * @return length y
      */
     public int getLengthY() {
         return murs[0].length;
@@ -192,7 +223,7 @@ public class Labyrinthe {
     /**
      * return taille selon X
      *
-     * @return
+     * @return length
      */
     public int getLength() {
         return murs.length;
@@ -201,19 +232,29 @@ public class Labyrinthe {
     /**
      * return mur en (i,j)
      *
-     * @param x
-     * @param y
-     * @return
+     * @param x the x
+     * @param y the y
+     * @return mur
      */
     public boolean getMur(int x, int y) {
         // utilise le tableau de boolean
         return this.murs[x][y];
     }
 
+    /**
+     * Get murs boolean [ ] [ ].
+     *
+     * @return the boolean [ ] [ ]
+     */
     public boolean[][] getMurs() {
         return murs;
     }
 
+    /**
+     * Main.
+     *
+     * @param args the args
+     */
     public static void main(String[] args){
         try{
             Labyrinthe laby = new Labyrinthe("labySimple/laby0.txt");

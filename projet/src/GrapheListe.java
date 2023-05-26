@@ -5,22 +5,38 @@ import java.util.List;
 
 import static java.lang.String.valueOf;
 
+/**
+ * The type Graphe liste.
+ */
 public class GrapheListe implements Graphe {
+    /**
+     * The Ens noeuds.
+     */
     List<Noeud> ensNoeuds;
 
+    /**
+     * The Ens nom.
+     */
     List<String> ensNom;
 
 
     /**
+     * Instantiates a new Graphe liste.
+     *
      * @return
      */
-
     public GrapheListe(){
         this.ensNoeuds = new ArrayList<Noeud>();
         this.ensNom = new ArrayList<String>();
     }
 
 
+    /**
+     * Instantiates a new Graphe liste.
+     *
+     * @param f the f
+     * @throws Exception the exception
+     */
     public GrapheListe(String f) throws Exception {
         this.ensNoeuds = new ArrayList<Noeud>();
         this.ensNom = new ArrayList<String>();
@@ -36,6 +52,14 @@ public class GrapheListe implements Graphe {
 
     }
 
+    /**
+     * Instantiates a new Graphe liste.
+     *
+     * @param taille  the taille
+     * @param debut   the debut
+     * @param arrivee the arrivee
+     * @throws Exception the exception
+     */
     public GrapheListe(int taille, int debut, int arrivee) throws Exception {
         this.ensNoeuds = new ArrayList<Noeud>();
         this.ensNom = new ArrayList<String>();
@@ -63,7 +87,14 @@ public class GrapheListe implements Graphe {
         }
 
 
-
+    /**
+     * Ajouter arc.
+     *
+     * @param depart      the depart
+     * @param destination the destination
+     * @param cout        the cout
+     * @throws Exception the exception
+     */
     public void ajouterArc(String depart, String destination, double cout) throws Exception {
         if(!ensNom.contains(depart)){
             Noeud n = new Noeud(depart);
@@ -82,6 +113,12 @@ public class GrapheListe implements Graphe {
         }
     }
 
+    /**
+     * Ajouter arc lab.
+     *
+     * @param depart      the depart
+     * @param destination the destination
+     */
     public void ajouterArcLab(String depart, String destination) {
         if(!ensNom.contains(depart)){
             Noeud n = new Noeud(depart);
@@ -100,6 +137,11 @@ public class GrapheListe implements Graphe {
         }
     }
 
+    /**
+     * Timer algo string.
+     *
+     * @return the string
+     */
     public String timerAlgo(){
         Valeur v1, v2;
         long start1, start2, end1, end2, temps1, temps2;
@@ -115,6 +157,11 @@ public class GrapheListe implements Graphe {
         return (temps1 + ";" + temps2 + "\n");
     }
 
+    /**
+     * To graph viz string.
+     *
+     * @return the string
+     */
     public String toGraphViz(){
         StringBuffer res = new StringBuffer("digraph G{\n");
         for (Noeud noeud : ensNoeuds){
@@ -185,6 +232,11 @@ public class GrapheListe implements Graphe {
         fichier.close();
     }
 
+    /**
+     * Gets ens noeuds.
+     *
+     * @return the ens noeuds
+     */
     public List<Noeud> getEnsNoeuds() {
         return ensNoeuds;
     }
@@ -192,8 +244,9 @@ public class GrapheListe implements Graphe {
     /**
      * genererGraphe methode
      * Build a random graph
-     * @param taille int Size of the node's list
-     * @param depart int Name of the first node
+     *
+     * @param taille  int Size of the node's list
+     * @param depart  int Name of the first node
      * @param arrivee int Name of the last node
      * @throws Exception throw Exception if one of the number is equal to 0
      */

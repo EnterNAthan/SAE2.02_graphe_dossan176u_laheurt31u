@@ -3,12 +3,25 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+/**
+ * The type Bellman ford.
+ */
 public class BellmanFord {
 
+    /**
+     * Instantiates a new Bellman ford.
+     */
     public BellmanFord() {
 
     }
 
+    /**
+     * Resoudre valeur.
+     *
+     * @param g      the g
+     * @param depart the depart
+     * @return the valeur
+     */
     public static Valeur resoudre(Graphe g, String depart) {
         Valeur v = new Valeur();
         List<String> listeNoeud = g.listeNoeuds();

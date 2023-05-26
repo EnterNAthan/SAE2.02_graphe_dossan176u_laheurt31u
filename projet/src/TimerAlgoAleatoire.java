@@ -1,7 +1,15 @@
 import java.io.File;
 import java.io.FileWriter;
 
+/**
+ * The type Timer algo aleatoire.
+ */
 public class TimerAlgoAleatoire {
+    /**
+     * The entry point of application.
+     *
+     * @param args the input arguments
+     */
     public static void main (String[] args) {
         try {
             File f = new File("Tableau_timers/Graphes_aleatoires.xls");

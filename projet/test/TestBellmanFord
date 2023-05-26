@@ -3,7 +3,15 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
+/**
+ * The type Test bellman ford.
+ */
 public class TestBellmanFord {
+    /**
+     * Test bellman ford.
+     *
+     * @throws Exception the exception
+     */
     @Test
     public void TestBellmanFord() throws Exception {
         GrapheListe gl = new GrapheListe();
