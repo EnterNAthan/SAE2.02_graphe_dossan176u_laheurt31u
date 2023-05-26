@@ -1,0 +1,50 @@
+algo
+Fonction point fixe(Graphe g InOut, Noeud depart) {
+	debut
+	pour i de 0 à g.ensNoeuds.size()
+		si g.ensNoeuds.get(i) = depart alors faire
+			L(g.ensNoeuds.get(i)) <= 0
+		sinon faire
+			L(g.ensNoeuds.get(i)) = +infini
+		fsi
+	fpour
+	
+	pF <= faux
+	tant que non pF faire
+		pF <= vrai
+		pour i de 0 à g.ensNoeuds.size()
+			pour j de 0 à g.suivants(g.ensNoeuds.get(i)).size() faire
+				noeudEtu <= g.suivants(g.ensNoeuds.get(i)).get(j).getDest()
+				valNoeudEtu <= L(noeudEtu)
+				nouvVal <= L(g.ensNoeuds.get(i)) + g.suivants(ensNoeuds.get(i)).get(j).getCout()
+				si nouvVal<valNoeudEtu alors faire
+					L(g.suivants(ensNoeuds.get(i)).get(j).getDest()) <= nouvVal
+					Parent(g.suivants(ensNoeuds.get(i)).get(j).getDest()) <= g.ensNoeuds.get(i)
+					pF<=faux
+				fsi
+			fpour
+		fpour
+	ftant
+	fin
+				
+		
+		
+
+
+
+
+
+
+
+
+
+Lexique
+g :Graphe{ensNoeuds : liste de Noeud, 
+	    ensNom : liste de String}
+n : Noeud{arcs : liste d'Arc,
+		nom : String}
+Arc { dest : String, cout : double}
+i : entier , indice d'incrémentation
+pF : boolean, verifie la condition du point fixe
+L(x) permet d'obtenir le cout du départ jusqu'au noeud X
+Parent(X) : permet d'obtenir le parent du noeud X
