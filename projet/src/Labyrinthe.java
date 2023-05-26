@@ -210,6 +210,10 @@ public class Labyrinthe {
         return this.murs[x][y];
     }
 
+    public boolean[][] getMurs() {
+        return murs;
+    }
+
     public static void main(String[] args){
         try{
             Labyrinthe laby = new Labyrinthe("labySimple/laby0.txt");

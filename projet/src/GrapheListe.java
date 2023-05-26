@@ -137,6 +137,10 @@ public class GrapheListe implements Graphe {
         return st.toString();
     }
 
+    public List<Noeud> getEnsNoeuds() {
+        return ensNoeuds;
+    }
+
     /**
      * genererGraphe methode
      * Build a random graph
